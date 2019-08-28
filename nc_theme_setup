@@ -1,0 +1,181 @@
+#!/bin/bash
+
+if [ ! -f wp-cli.phar ]; then
+	echo "Téléchargement de WP-CLI"
+	echo "--------------------------------------------------------"
+    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+  echo "--------------------------------------------------------"
+  echo "WP-CLI a bien été installé"
+fi
+
+min=10000
+max=99999
+number=$[($RANDOM % ($[$max - $min] + 1)) + $min]
+tmpfile=/tmp/wpinit${number}.log
+adminlogin=$[($RANDOM % ($[$max - $min] + 1)) + $min]
+adminpassword=$(openssl rand -base64 8)
+currentpath=$(pwd)
+
+if [ -f $tmpfile ]; then
+  rm $tmpfile
+fi
+
+touch $tmpfile
+clear
+
+if [ -d $currentpath"/wp-content" ]; then
+  echo -n "Des fichiers WordPress ont été trouvés. Souhaitez-vous les supprimer ? [O/N]: "
+  read DELETE
+  if [[ $DELETE = [Oo] ]]; then
+    rm -rf $currentpath"/*"
+    echo "Les fichiers contenus dans le dossier $currentpath ont été supprimés"
+  else
+    exit 1
+  fi
+fi
+
+echo "Installation de WordPress"
+php wp-cli.phar core download --locale=fr_FR
+
+echo "Configuration de la base de données"
+read -p "Nom de la BDD : " dbname
+read -p "Utilisateur de la BDD : " dbuser
+read -p "Mot de passe de la BDD : " dbpassword
+
+echo "Base de données" >> $tmpfile
+echo "----------------------------" >> $tmpfile
+echo "Nom de la BDD : $dbname" >> $tmpfile
+echo "Utilisateur de la BDD : $dbuser" >> $tmpfile
+echo "Mot de passe de la BDD : $dbpassword" >> $tmpfile
+echo "Préfixe de la BDD : wp${number}_" >> $tmpfile
+echo "----------------------------" >> $tmpfile
+
+php wp-cli.phar core config --dbname=$dbname --dbuser=$dbuser --dbpass=$dbpassword --dbprefix=wp${number}_ --locale=fr_FR --extra-php <<PHP
+if ( !defined('WP_DEBUG') ) define('WP_DEBUG', true);
+if ( !defined('DISALLOW_FILE_EDIT') ) define('DISALLOW_FILE_EDIT', true);
+if ( !defined('AUTOMATIC_UPDATER_DISABLED') ) define('AUTOMATIC_UPDATER_DISABLED', true);
+if ( !defined('WP_AUTO_UPDATE_CORE') ) define('WP_AUTO_UPDATE_CORE', false);
+PHP
+
+php wp-cli.phar db reset
+
+echo "Configuration de WordPress"
+read -p "Nom du projet (login htpasswd) : " project
+read -p "Titre du site : " title
+read -p "URL complète (ex : http://exemple.com/) : " url
+read -p "Email de l'administrateur : " adminemail
+
+echo "WordPress" >> $tmpfile
+echo "----------------------------" >> $tmpfile
+echo "Nom du projet (login htpasswd) : $project" >> $tmpfile
+echo "Titre du site : $title" >> $tmpfile
+echo "URL : $url" >> $tmpfile
+echo "Identifiant de l'administrateur : admin_${adminlogin}" >> $tmpfile
+echo "Email de l'administrateur : $adminemail" >> $tmpfile
+echo "Mot de passe de l'administrateur : $adminpassword" >> $tmpfile
+echo "URL du back-office : ${url}/wp-admin/" >> $tmpfile
+echo "----------------------------" >> $tmpfile
+
+echo ""
+echo "Installation en cours..."
+
+php wp-cli.phar core install --url="$url" --title="$title" --admin_user="admin_${adminlogin}" --admin_password="$adminpassword" --admin_email="$adminemail" --skip-email
+php wp-cli.phar option update siteurl $url
+php wp-cli.phar option update home $url
+
+echo "Mise à jour des permaliens"
+php wp-cli.phar rewrite structure '/%postname%/'
+
+echo "Nettoyage de l'installation"
+php wp-cli.phar plugin delete hello
+php wp-cli.phar plugin delete akismet
+php wp-cli.phar post delete 1
+php wp-cli.phar option update blogdescription ''
+php wp-cli.phar option update use_smilies 0
+php wp-cli.phar option update blog_public 0
+
+cd wp-content/themes
+git clone --depth 1 https://github.com/Net-Com/nc_theme.git nc_theme
+cd ../plugins
+git clone --depth 1 https://gitlab.com/net-com/nc_master.git nc_master
+cd ../../
+
+php wp-cli.phar theme activate nc_theme
+php wp-cli.phar theme delete twentyfifteen
+php wp-cli.phar theme delete twentysixteen
+php wp-cli.phar theme delete twentyseventeen
+php wp-cli.phar theme delete twentynineteen
+
+php wp-cli.phar plugin install admin-menu-editor --activate
+php wp-cli.phar plugin install broken-link-checker --activate
+php wp-cli.phar plugin install classic-editor --activate
+php wp-cli.phar plugin install crop-thumbnails --activate
+php wp-cli.phar plugin install custom-fields-csv-xml-importer --activate
+php wp-cli.phar plugin install debug-bar --activate
+php wp-cli.phar plugin install debug-bar-actions-and-filters-addon --activate
+php wp-cli.phar plugin install duplicate-post --activate
+php wp-cli.phar plugin install email-encoder-bundle --activate
+php wp-cli.phar plugin install email-templates --activate
+php wp-cli.phar plugin install google-analytics-dashboard-for-wp --activate
+php wp-cli.phar plugin install kint-debugger --activate
+php wp-cli.phar plugin install loco-translate --activate
+php wp-cli.phar plugin install material-admin-theme --activate
+php wp-cli.phar plugin install members --activate
+php wp-cli.phar plugin install pods --activate
+php wp-cli.phar plugin install redirection --activate
+php wp-cli.phar plugin install redux-framework --activate
+php wp-cli.phar plugin install regenerate-thumbnails --activate
+php wp-cli.phar plugin install simply-show-hooks --activate
+php wp-cli.phar plugin install tinymce-advanced --activate
+php wp-cli.phar plugin install wordpress-seo --activate
+php wp-cli.phar plugin install wp-mail-smtp --activate
+
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/admin-columns-pro-4-7-2.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/elementor-pro-2.6.5.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/gravityforms_2.4.11.6.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/ithemes-security-pro-6.0.3.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/searchwp-3.0.7.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-export-pro_1.5.7.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-import-pro_4.5.7.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-rocket_3.3.6.zip
+
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/nc_disable_delete_page.zip --activate
+
+php wp-cli.phar plugin update --all
+
+echo "${project}:MqiKIHH7L1K9s" > .htpasswd
+
+htaccessinfo=$(cat htaccess.add)
+
+echo "AuthUserFile ${currentpath}/.htpasswd" >> htaccess.add
+
+cat htaccess.add .htaccess > .htaccess
+rm htaccess.add
+
+echo "Régénération des permaliens"
+php wp-cli.phar rewrite flush --hard
+
+echo "Création de la page d'accueil"
+php wp-cli.phar post create --post_type=page --post_title=Home --post_status=publish --post_author=$(php wp-cli.phar user get admin_${adminlogin} --field=ID --format=ids)
+php wp-cli.phar option update show_on_front 'page'
+php wp-cli.phar option update page_on_front $(php wp-cli.phar post list --post_type=page --post_status=publish --posts_per_page=1 --pagename=home --field=ID --format=ids)
+
+php wp-cli.phar menu create "Menu principal"
+export IFS=" "
+for pageid in $(php wp-cli.phar post list --order="ASC" --orderby="date" --post_type=page --post_status=publish --posts_per_page=-1 --field=ID --format=ids); do
+	php wp-cli.phar menu item add-post menu-principal $pageid
+done
+
+php wp-cli.phar menu location assign menu-principal menu_header
+
+echo "Mise à jour des langues"
+php wp-cli.phar core language update
+
+cat $tmpfile
+mail -s "Détails de l'installation du thème Net.Com : ${url}" ${adminemail} < $tmpfile
+
+rm $tmpfile
+rm README.md
+rm wp-cli.yml
+find -type d -name .git -delete
+rm -- "$0"
