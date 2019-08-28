@@ -89,7 +89,7 @@ php wp-cli.phar rewrite structure '/%postname%/'
 echo "Nettoyage de l'installation"
 php wp-cli.phar plugin delete hello
 php wp-cli.phar plugin delete akismet
-php wp-cli.phar post delete 1
+php wp-cli.phar post delete $(php wp-cli.phar post list --format=ids) --force
 php wp-cli.phar option update blogdescription ''
 php wp-cli.phar option update use_smilies 0
 php wp-cli.phar option update blog_public 0
@@ -114,6 +114,7 @@ php wp-cli.phar plugin install custom-fields-csv-xml-importer --activate
 php wp-cli.phar plugin install debug-bar --activate
 php wp-cli.phar plugin install debug-bar-actions-and-filters-addon --activate
 php wp-cli.phar plugin install duplicate-post --activate
+php wp-cli.phar plugin install elementor --activate
 php wp-cli.phar plugin install email-encoder-bundle --activate
 php wp-cli.phar plugin install email-templates --activate
 php wp-cli.phar plugin install google-analytics-dashboard-for-wp --activate
@@ -140,6 +141,7 @@ php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-rocket_3.3.6.zip
 
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/nc_disable_delete_page.zip --activate
+php wp-cli.phar plugin activate nc_master
 
 php wp-cli.phar plugin update --all
 
@@ -150,19 +152,18 @@ htaccessinfo=$(cat htaccess.add)
 echo "AuthUserFile ${currentpath}/.htpasswd" >> htaccess.add
 
 cat htaccess.add .htaccess > .htaccess
-rm htaccess.add
 
 echo "Régénération des permaliens"
 php wp-cli.phar rewrite flush --hard
 
 echo "Création de la page d'accueil"
-php wp-cli.phar post create --post_type=page --post_title=Home --post_status=publish --post_author=$(php wp-cli.phar user get admin_${adminlogin} --field=ID --format=ids)
+php wp-cli.phar post create --post_type=page --post_title=Accueil --post_status=publish --post_author=$(php wp-cli.phar user get admin_${adminlogin} --field=ID)
 php wp-cli.phar option update show_on_front 'page'
-php wp-cli.phar option update page_on_front $(php wp-cli.phar post list --post_type=page --post_status=publish --posts_per_page=1 --pagename=home --field=ID --format=ids)
+php wp-cli.phar option update page_on_front $(php wp-cli.phar post list --post_type=page --post_status=publish --posts_per_page=1 --pagename=accueil --field=ID)
 
 php wp-cli.phar menu create "Menu principal"
 export IFS=" "
-for pageid in $(php wp-cli.phar post list --order="ASC" --orderby="date" --post_type=page --post_status=publish --posts_per_page=-1 --field=ID --format=ids); do
+for pageid in $(php wp-cli.phar post list --post_type=page --post_status=publish --posts_per_page=-1 --format=ids); do
 	php wp-cli.phar menu item add-post menu-principal $pageid
 done
 
@@ -175,7 +176,9 @@ cat $tmpfile
 mail -s "Détails de l'installation du thème Net.Com : ${url}" ${adminemail} < $tmpfile
 
 rm $tmpfile
+rm htaccess.add
 rm README.md
+rm wp-cli.phar
 rm wp-cli.yml
-find -type d -name .git -delete
+find . -name ".git" -type d -exec rm -r "{}" \;
 rm -- "$0"
