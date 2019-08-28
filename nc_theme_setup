@@ -89,7 +89,7 @@ php wp-cli.phar rewrite structure '/%postname%/'
 echo "Nettoyage de l'installation"
 php wp-cli.phar plugin delete hello
 php wp-cli.phar plugin delete akismet
-php wp-cli.phar post delete $(php wp-cli.phar post list --format=ids) --force
+php wp-cli.phar post delete $(php wp-cli.phar post list --post_type=post,page --format=ids) --force
 php wp-cli.phar option update blogdescription ''
 php wp-cli.phar option update use_smilies 0
 php wp-cli.phar option update blog_public 0
@@ -180,5 +180,5 @@ rm htaccess.add
 rm README.md
 rm wp-cli.phar
 rm wp-cli.yml
-find . -name ".git" -type d -exec rm -r "{}" \;
+find . -name ".git" -type d -exec rm -rf "{}" \;
 rm -- "$0"
