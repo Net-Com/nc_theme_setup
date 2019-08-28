@@ -180,5 +180,5 @@ rm htaccess.add
 rm README.md
 rm wp-cli.phar
 rm wp-cli.yml
-find . -name ".git" -type d -exec rm -rf "{}" \;
+find . -name ".git" -type d -prune -exec rm -rf "{}" \;
 rm -- "$0"
