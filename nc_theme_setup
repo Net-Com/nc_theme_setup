@@ -73,7 +73,7 @@ echo "URL : $url" >> $tmpfile
 echo "Identifiant de l'administrateur : admin_${adminlogin}" >> $tmpfile
 echo "Email de l'administrateur : $adminemail" >> $tmpfile
 echo "Mot de passe de l'administrateur : $adminpassword" >> $tmpfile
-echo "URL du back-office : ${url}/wp-admin/" >> $tmpfile
+echo "URL du back-office : ${url}wp-admin/" >> $tmpfile
 echo "----------------------------" >> $tmpfile
 
 echo ""
