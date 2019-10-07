@@ -132,6 +132,7 @@ php wp-cli.phar plugin install simply-show-hooks --activate
 php wp-cli.phar plugin install tinymce-advanced --activate
 php wp-cli.phar plugin install wordpress-seo --activate
 php wp-cli.phar plugin install wp-mail-smtp --activate
+php wp-cli.phar plugin install user-switching --activate
 
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/admin-columns-pro-4-7-2.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/codecanyon-cTTOwNtg-media-folders-manager-for-wordpress.zip --activate
