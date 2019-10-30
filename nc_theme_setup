@@ -130,7 +130,7 @@ php wp-cli.phar plugin install redux-framework --activate
 php wp-cli.phar plugin install regenerate-thumbnails --activate
 php wp-cli.phar plugin install simply-show-hooks --activate
 php wp-cli.phar plugin install tinymce-advanced --activate
-php wp-cli.phar plugin install wordpress-seo --activate
+php wp-cli.phar plugin install wp-seopress --activate
 php wp-cli.phar plugin install wp-mail-smtp --activate
 php wp-cli.phar plugin install user-switching --activate
 
@@ -142,6 +142,7 @@ php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/ithemes
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/searchwp-3.0.7.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-export-pro_1.5.7.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-import-pro_4.5.7.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-seopress-pro-3.7.3.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-rocket_3.3.6.zip
 
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/nc_disable_delete_page.zip --activate
