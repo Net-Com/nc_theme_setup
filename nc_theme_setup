@@ -136,7 +136,6 @@ php wp-cli.phar plugin install user-switching --activate
 
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/admin-columns-pro-4-7-2.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/codecanyon-cTTOwNtg-media-folders-manager-for-wordpress.zip --activate
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/elementor-pro-2.6.5.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/gravityforms_2.4.11.6.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/ithemes-security-pro-6.0.3.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/searchwp-3.0.7.zip --activate
