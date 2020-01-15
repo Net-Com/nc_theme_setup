@@ -107,6 +107,7 @@ php wp-cli.phar theme delete twentyfifteen
 php wp-cli.phar theme delete twentysixteen
 php wp-cli.phar theme delete twentyseventeen
 php wp-cli.phar theme delete twentynineteen
+php wp-cli.phar theme delete twentytwenty
 
 php wp-cli.phar plugin install admin-menu-editor --activate
 php wp-cli.phar plugin install broken-link-checker --activate
@@ -153,7 +154,7 @@ echo "${project}:MqiKIHH7L1K9s" > .htpasswd
 
 htaccessinfo=$(cat htaccess.add)
 
-echo "AuthUserFile ${currentpath}/.htpasswd" >> htaccess.add
+echo "#AuthUserFile ${currentpath}/.htpasswd" >> htaccess.add
 
 cat htaccess.add .htaccess > .htaccess
 
