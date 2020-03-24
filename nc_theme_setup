@@ -53,7 +53,7 @@ echo "Préfixe de la BDD : wp${number}_" >> $tmpfile
 echo "----------------------------" >> $tmpfile
 
 php wp-cli.phar core config --dbhost=$dbhost --dbname=$dbname --dbuser=$dbuser --dbpass=$dbpassword --dbprefix=wp${number}_ --locale=fr_FR --extra-php <<PHP
-if ( !defined('WP_DEBUG') ) define('WP_DEBUG', true);
+if ( !defined('WP_DEBUG') ) define('WP_DEBUG', false);
 if ( !defined('DISALLOW_FILE_EDIT') ) define('DISALLOW_FILE_EDIT', true);
 if ( !defined('AUTOMATIC_UPDATER_DISABLED') ) define('AUTOMATIC_UPDATER_DISABLED', true);
 if ( !defined('WP_AUTO_UPDATE_CORE') ) define('WP_AUTO_UPDATE_CORE', false);
