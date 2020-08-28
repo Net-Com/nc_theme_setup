@@ -98,8 +98,6 @@ php wp-cli.phar option update blog_public 0
 
 cd wp-content/themes
 git clone --depth 1 https://github.com/Net-Com/nc_theme.git nc_theme
-cd ../plugins
-git clone --depth 1 https://gitlab.com/net-com/nc_master.git nc_master
 cd ../../
 
 php wp-cli.phar theme activate nc_theme
@@ -110,7 +108,6 @@ php wp-cli.phar theme delete twentynineteen
 php wp-cli.phar theme delete twentytwenty
 
 php wp-cli.phar plugin install admin-menu-editor --activate
-php wp-cli.phar plugin install broken-link-checker --activate
 php wp-cli.phar plugin install classic-editor --activate
 php wp-cli.phar plugin install crop-thumbnails --activate
 php wp-cli.phar plugin install custom-fields-csv-xml-importer --activate
@@ -120,7 +117,6 @@ php wp-cli.phar plugin install email-encoder-bundle --activate
 php wp-cli.phar plugin install email-templates --activate
 php wp-cli.phar plugin install google-analytics-dashboard-for-wp --activate
 php wp-cli.phar plugin install loco-translate --activate
-php wp-cli.phar plugin install material-admin-theme --activate
 php wp-cli.phar plugin install members --activate
 php wp-cli.phar plugin install pods --activate
 php wp-cli.phar plugin install redirection --activate
@@ -131,7 +127,6 @@ php wp-cli.phar plugin install wp-seopress --activate
 php wp-cli.phar plugin install wp-mail-smtp --activate
 php wp-cli.phar plugin install user-switching --activate
 
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/admin-columns-pro-4-7-2.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/codecanyon-cTTOwNtg-media-folders-manager-for-wordpress.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/gravityforms_2.4.11.6.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/ithemes-security-pro-6.0.3.zip --activate
@@ -140,8 +135,6 @@ php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-import-pro_4.5.7.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-seopress-pro-3.7.3.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-rocket_3.3.6.zip
-
-php wp-cli.phar plugin activate nc_master
 
 php wp-cli.phar plugin update --all
 
