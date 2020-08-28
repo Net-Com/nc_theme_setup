@@ -114,14 +114,11 @@ php wp-cli.phar plugin install broken-link-checker --activate
 php wp-cli.phar plugin install classic-editor --activate
 php wp-cli.phar plugin install crop-thumbnails --activate
 php wp-cli.phar plugin install custom-fields-csv-xml-importer --activate
-php wp-cli.phar plugin install debug-bar --activate
-php wp-cli.phar plugin install debug-bar-actions-and-filters-addon --activate
 php wp-cli.phar plugin install duplicate-post --activate
 php wp-cli.phar plugin install elementor --activate
 php wp-cli.phar plugin install email-encoder-bundle --activate
 php wp-cli.phar plugin install email-templates --activate
 php wp-cli.phar plugin install google-analytics-dashboard-for-wp --activate
-php wp-cli.phar plugin install kint-debugger --activate
 php wp-cli.phar plugin install loco-translate --activate
 php wp-cli.phar plugin install material-admin-theme --activate
 php wp-cli.phar plugin install members --activate
@@ -129,7 +126,6 @@ php wp-cli.phar plugin install pods --activate
 php wp-cli.phar plugin install redirection --activate
 php wp-cli.phar plugin install redux-framework --activate
 php wp-cli.phar plugin install regenerate-thumbnails --activate
-php wp-cli.phar plugin install simply-show-hooks --activate
 php wp-cli.phar plugin install tinymce-advanced --activate
 php wp-cli.phar plugin install wp-seopress --activate
 php wp-cli.phar plugin install wp-mail-smtp --activate
@@ -145,7 +141,6 @@ php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-seopress-pro-3.7.3.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-rocket_3.3.6.zip
 
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/nc_disable_delete_page.zip --activate
 php wp-cli.phar plugin activate nc_master
 
 php wp-cli.phar plugin update --all
