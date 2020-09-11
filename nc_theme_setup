@@ -127,13 +127,13 @@ php wp-cli.phar plugin install wp-mail-smtp --activate
 php wp-cli.phar plugin install user-switching --activate
 
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/codecanyon-cTTOwNtg-media-folders-manager-for-wordpress.zip --activate
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/gravityforms_2.4.11.6.zip --activate
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/ithemes-security-pro-6.0.3.zip --activate
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/searchwp-3.0.7.zip --activate
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-export-pro_1.5.7.zip --activate
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-import-pro_4.5.7.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/gravityforms_2.4.20.4.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/ithemes-security-pro-6.6.5.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/searchwp-4.0.30.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-export-pro_1.6.2.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-import-pro_4.6.3.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-seopress-pro-3.7.3.zip --activate
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-rocket_3.3.6.zip
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-rocket_3.7.0.1.zip
 
 php wp-cli.phar plugin update --all
 
