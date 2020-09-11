@@ -115,7 +115,6 @@ php wp-cli.phar plugin install duplicate-post --activate
 php wp-cli.phar plugin install elementor --activate
 php wp-cli.phar plugin install email-encoder-bundle --activate
 php wp-cli.phar plugin install email-templates --activate
-php wp-cli.phar plugin install google-analytics-dashboard-for-wp --activate
 php wp-cli.phar plugin install loco-translate --activate
 php wp-cli.phar plugin install members --activate
 php wp-cli.phar plugin install pods --activate
