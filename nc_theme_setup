@@ -126,7 +126,7 @@ php wp-cli.phar plugin install wp-seopress --activate
 php wp-cli.phar plugin install wp-mail-smtp --activate
 php wp-cli.phar plugin install user-switching --activate
 
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/codecanyon-cTTOwNtg-media-folders-manager-for-wordpress.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/filebird-pro_4.1.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/gravityforms_2.4.20.4.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/ithemes-security-pro-6.6.5.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/searchwp-4.0.30.zip --activate
