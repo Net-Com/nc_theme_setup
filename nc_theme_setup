@@ -123,6 +123,7 @@ php wp-cli.phar plugin install tinymce-advanced --activate
 php wp-cli.phar plugin install user-switching --activate
 
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/filebird-pro_4.1.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/nc-ariane_0.1.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/searchwp-4.0.30.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-export-pro_1.6.2.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-import-pro_4.6.3.zip --activate
