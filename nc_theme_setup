@@ -107,14 +107,12 @@ php wp-cli.phar theme delete twentyseventeen
 php wp-cli.phar theme delete twentynineteen
 php wp-cli.phar theme delete twentytwenty
 
-php wp-cli.phar plugin install admin-menu-editor --activate
 php wp-cli.phar plugin install classic-editor --activate
 php wp-cli.phar plugin install crop-thumbnails --activate
 php wp-cli.phar plugin install custom-fields-csv-xml-importer --activate
 php wp-cli.phar plugin install duplicate-post --activate
 php wp-cli.phar plugin install elementor --activate
 php wp-cli.phar plugin install email-encoder-bundle --activate
-php wp-cli.phar plugin install email-templates --activate
 php wp-cli.phar plugin install loco-translate --activate
 php wp-cli.phar plugin install members --activate
 php wp-cli.phar plugin install pods --activate
@@ -122,18 +120,13 @@ php wp-cli.phar plugin install redirection --activate
 php wp-cli.phar plugin install redux-framework --activate
 php wp-cli.phar plugin install regenerate-thumbnails --activate
 php wp-cli.phar plugin install tinymce-advanced --activate
-php wp-cli.phar plugin install wp-seopress --activate
-php wp-cli.phar plugin install wp-mail-smtp --activate
 php wp-cli.phar plugin install user-switching --activate
 
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/filebird-pro_4.1.zip --activate
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/gravityforms_2.4.20.4.zip --activate
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/ithemes-security-pro-6.6.5.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/searchwp-4.0.30.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-export-pro_1.6.2.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-import-pro_4.6.3.zip --activate
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-seopress-pro-3.7.3.zip --activate
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-rocket_3.7.0.1.zip
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wpmu-dev-dashboard-4.10.5.zip --activate
 
 php wp-cli.phar plugin update --all
 
