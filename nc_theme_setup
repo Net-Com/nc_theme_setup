@@ -106,6 +106,7 @@ php wp-cli.phar theme delete twentysixteen
 php wp-cli.phar theme delete twentyseventeen
 php wp-cli.phar theme delete twentynineteen
 php wp-cli.phar theme delete twentytwenty
+php wp-cli.phar theme delete twentytwentyone
 
 php wp-cli.phar plugin install classic-editor --activate
 php wp-cli.phar plugin install crop-thumbnails --activate
