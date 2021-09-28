@@ -127,10 +127,10 @@ php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/filebir
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/nc-ariane_0.1.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/nc-reroute_1.1.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/nc-share_1.0.zip --activate
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/searchwp-4.0.30.zip --activate
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-export-pro_1.6.2.zip --activate
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-import-pro_4.6.3.zip --activate
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wpmu-dev-dashboard-4.10.5.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/searchwp-4.1.22.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-export-pro_1.7.1.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-import-pro-4.7.0.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wpmu-dev-dashboard-4.11.3.zip --activate
 
 php wp-cli.phar plugin update --all
 
