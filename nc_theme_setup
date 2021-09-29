@@ -45,14 +45,14 @@ read -p "Nom de la BDD : " dbname
 
 echo "Base de données" >> $tmpfile
 echo "----------------------------" >> $tmpfile
-echo "Host de la BDD : $dbhost" >> $tmpfile
-echo "Utilisateur de la BDD : $dbuser" >> $tmpfile
-echo "Mot de passe de la BDD : $dbpassword" >> $tmpfile
-echo "Nom de la BDD : $dbname" >> $tmpfile
+echo "Host de la BDD : ${dbhost}" >> $tmpfile
+echo "Utilisateur de la BDD : ${dbuser}" >> $tmpfile
+echo "Mot de passe de la BDD : ${dbpassword}" >> $tmpfile
+echo "Nom de la BDD : ${dbname}" >> $tmpfile
 echo "Préfixe de la BDD : wp${number}_" >> $tmpfile
 echo "----------------------------" >> $tmpfile
 
-php wp-cli.phar core config --dbhost=$dbhost --dbname=$dbname --dbuser=$dbuser --dbpass=$dbpassword --dbprefix=wp${number}_ --locale=fr_FR --extra-php <<PHP
+php wp-cli.phar core config --dbhost=${dbhost} --dbname=${dbname} --dbuser=${dbuser} --dbpass=${dbpassword} --dbprefix=wp${number}_ --locale=fr_FR --extra-php <<PHP
 if ( !defined('WP_DEBUG') ) define('WP_DEBUG', false);
 if ( !defined('DISALLOW_FILE_EDIT') ) define('DISALLOW_FILE_EDIT', true);
 if ( !defined('AUTOMATIC_UPDATER_DISABLED') ) define('AUTOMATIC_UPDATER_DISABLED', true);
