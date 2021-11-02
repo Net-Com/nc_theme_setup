@@ -110,7 +110,6 @@ php wp-cli.phar theme delete twentytwentyone
 
 php wp-cli.phar plugin install classic-editor --activate
 php wp-cli.phar plugin install crop-thumbnails --activate
-php wp-cli.phar plugin install custom-fields-csv-xml-importer --activate
 php wp-cli.phar plugin install duplicate-post --activate
 php wp-cli.phar plugin install elementor --activate
 php wp-cli.phar plugin install email-encoder-bundle --activate
@@ -131,6 +130,7 @@ php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/searchw
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-export-pro_1.7.1.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wp-all-import-pro-4.7.0.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wpmu-dev-dashboard-4.11.3.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/custom-fields-csv-xml-importer.zip --activate
 
 php wp-cli.phar plugin update --all
 
