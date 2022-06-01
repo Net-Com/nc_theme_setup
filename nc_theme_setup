@@ -109,10 +109,10 @@ php wp-cli.phar theme delete twentytwenty
 php wp-cli.phar theme delete twentytwentyone
 php wp-cli.phar theme delete twentytwentytwo
 
-php wp-cli.phar plugin install classic-editor --activate
+php wp-cli.phar plugin install classic-editor
 php wp-cli.phar plugin install crop-thumbnails --activate
 php wp-cli.phar plugin install duplicate-post --activate
-php wp-cli.phar plugin install elementor --activate
+php wp-cli.phar plugin install elementor
 php wp-cli.phar plugin install email-encoder-bundle --activate
 php wp-cli.phar plugin install loco-translate --activate
 php wp-cli.phar plugin install members --activate
