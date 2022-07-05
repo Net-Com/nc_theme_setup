@@ -98,6 +98,7 @@ php wp-cli.phar option update blog_public 0
 
 cd wp-content/themes
 git clone --depth 1 https://github.com/Net-Com/nc_theme.git nc_theme
+mv nc_theme/base/mu-plugins ../mu-plugins
 cd ../../
 
 php wp-cli.phar theme activate nc_theme
