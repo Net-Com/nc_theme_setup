@@ -124,7 +124,7 @@ php wp-cli.phar plugin install regenerate-thumbnails --activate
 php wp-cli.phar plugin install tinymce-advanced --activate
 php wp-cli.phar plugin install user-switching --activate
 
-php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/filebird-pro_4.1.zip --activate
+php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/filebird-pro_5.0.3.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/nc-ariane_0.1.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/nc-reroute_1.1.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/nc-share_1.0.zip --activate
