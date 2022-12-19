@@ -3,7 +3,7 @@
 if [ ! -f wp-cli.phar ]; then
 	echo "Téléchargement de WP-CLI"
 	echo "--------------------------------------------------------"
-    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar --ssl-no-revoke
   echo "--------------------------------------------------------"
   echo "WP-CLI a bien été installé"
 fi
