@@ -113,6 +113,9 @@ php wp-cli.phar theme delete twentytwentythree
 php wp-cli.phar theme delete twentytwentyfour
 php wp-cli.phar theme delete twentytwentyfive
 php wp-cli.phar theme delete twentytwentysix
+php wp-cli.phar theme delete twentytwentyseven
+php wp-cli.phar theme delete twentytwentyeight
+php wp-cli.phar theme delete twentytwentynine
 
 php wp-cli.phar plugin install classic-editor --activate
 php wp-cli.phar plugin install crop-thumbnails --activate
@@ -126,6 +129,7 @@ php wp-cli.phar plugin install redux-framework --activate
 php wp-cli.phar plugin install regenerate-thumbnails --activate
 php wp-cli.phar plugin install tinymce-advanced --activate
 php wp-cli.phar plugin install user-switching --activate
+php wp-cli.phar plugin install tarteaucitronjs --activate
 
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/filebird-pro_5.0.3.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/nc-ariane_0.1.zip --activate
