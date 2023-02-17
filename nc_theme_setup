@@ -116,6 +116,8 @@ mv nc_theme/base/mu-plugins ../mu-plugins
 cd ../../
 
 php wp-cli.phar theme activate nc_theme
+php wp-cli.phar theme delete twentytwentyone
+php wp-cli.phar theme delete twentytwentytwo
 php wp-cli.phar theme delete twentytwentythree
 php wp-cli.phar theme delete twentytwentyfour
 php wp-cli.phar theme delete twentytwentyfive
