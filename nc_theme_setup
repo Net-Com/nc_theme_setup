@@ -142,12 +142,7 @@ php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/wpmu-de
 
 php wp-cli.phar plugin update --all
 
-echo "${project}:MqiKIHH7L1K9s" > .htpasswd
-
-htaccessinfo=$(cat htaccess.add)
-
-echo "#AuthUserFile ${currentpath}/.htpasswd" >> htaccess.add
-
+echo "${project}:\$apr1\$u6mx5tbi\$dtK6.zXof7i5G85fHMOPR0" > .htpasswd
 cat htaccess.add .htaccess > .htaccess
 
 echo "Régénération des permaliens"
