@@ -96,27 +96,6 @@ php wp-cli.phar option update blogdescription ''
 php wp-cli.phar option update use_smilies 0
 php wp-cli.phar option update blog_public 0
 
-cd wp-content/themes
-git clone --depth 1 https://github.com/Net-Com/nc_theme.git nc_theme
-mv nc_theme/base/mu-plugins ../mu-plugins
-cd ../../
-
-php wp-cli.phar theme activate nc_theme
-php wp-cli.phar theme delete twentyfifteen
-php wp-cli.phar theme delete twentysixteen
-php wp-cli.phar theme delete twentyseventeen
-php wp-cli.phar theme delete twentynineteen
-php wp-cli.phar theme delete twentytwenty
-php wp-cli.phar theme delete twentytwentyone
-php wp-cli.phar theme delete twentytwentytwo
-php wp-cli.phar theme delete twentytwentythree
-php wp-cli.phar theme delete twentytwentyfour
-php wp-cli.phar theme delete twentytwentyfive
-php wp-cli.phar theme delete twentytwentysix
-php wp-cli.phar theme delete twentytwentyseven
-php wp-cli.phar theme delete twentytwentyeight
-php wp-cli.phar theme delete twentytwentynine
-
 php wp-cli.phar plugin install classic-editor --activate
 php wp-cli.phar plugin install crop-thumbnails --activate
 php wp-cli.phar plugin install duplicate-post --activate
@@ -130,6 +109,20 @@ php wp-cli.phar plugin install regenerate-thumbnails --activate
 php wp-cli.phar plugin install tinymce-advanced --activate
 php wp-cli.phar plugin install user-switching --activate
 php wp-cli.phar plugin install tarteaucitronjs --activate
+
+cd wp-content/themes
+git clone --depth 1 https://github.com/Net-Com/nc_theme.git nc_theme
+mv nc_theme/base/mu-plugins ../mu-plugins
+cd ../../
+
+php wp-cli.phar theme activate nc_theme
+php wp-cli.phar theme delete twentytwentythree
+php wp-cli.phar theme delete twentytwentyfour
+php wp-cli.phar theme delete twentytwentyfive
+php wp-cli.phar theme delete twentytwentysix
+php wp-cli.phar theme delete twentytwentyseven
+php wp-cli.phar theme delete twentytwentyeight
+php wp-cli.phar theme delete twentytwentynine
 
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/filebird-pro_5.0.3.zip --activate
 php wp-cli.phar plugin install ./wp-content/themes/nc_theme/base/plugins/nc-ariane_0.1.zip --activate
