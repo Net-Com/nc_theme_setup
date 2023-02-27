@@ -4,6 +4,7 @@
 #<RequireAny>
     #Require ip 109.3.211.150
     #Require ip 127.0.0.1
+    #Require ip 94.23.35.34 # RGAA
     #Require ip SERVER_IP
     #Require valid-user
 #</RequireAny>
