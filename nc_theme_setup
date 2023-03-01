@@ -57,6 +57,7 @@ if ( !defined('WP_DEBUG') ) define('WP_DEBUG', false);
 if ( !defined('DISALLOW_FILE_EDIT') ) define('DISALLOW_FILE_EDIT', true);
 if ( !defined('AUTOMATIC_UPDATER_DISABLED') ) define('AUTOMATIC_UPDATER_DISABLED', true);
 if ( !defined('WP_AUTO_UPDATE_CORE') ) define('WP_AUTO_UPDATE_CORE', false);
+if ( !defined('WP_POST_REVISIONS') ) define('WP_POST_REVISIONS', 10);
 PHP
 
 php wp-cli.phar db reset
