@@ -8,3 +8,5 @@
     #Require ip SERVER_IP
     #Require valid-user
 #</RequireAny>
+
+Header set Cache-Control "max-age=3600, no-cache"
