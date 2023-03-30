@@ -9,4 +9,4 @@
     #Require valid-user
 #</RequireAny>
 
-Header set Cache-Control "max-age=3600, no-cache"
+#Header set Cache-Control "max-age=3600, no-cache"
