@@ -10,3 +10,21 @@
 #</RequireAny>
 
 #Header set Cache-Control "max-age=3600, no-cache"
+
+# Moteur de recherche
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # On bloque si il y a un paramètre "s" et pas de paramètre "s_favorites=1"
+    RewriteCond %{REQUEST_URI} !^/wp-admin/ [NC]
+    RewriteCond %{QUERY_STRING} (^|&)s=.*(&|$) [NC]
+    RewriteCond %{QUERY_STRING} !&s_favorites=1(&|$) [NC]
+    RewriteRule .* - [F,L]
+
+    # On bloque si il y a un paramètre "s" et qu'il y a un paramètre "s_remember"
+    RewriteCond %{REQUEST_URI} !^/wp-admin/ [NC]
+    RewriteCond %{QUERY_STRING} (^|&)s=.*(&|$) [NC]
+    RewriteCond %{QUERY_STRING} s_remember= [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
